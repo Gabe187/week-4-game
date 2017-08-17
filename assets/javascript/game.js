@@ -15,6 +15,7 @@ function randomNumberFromRange(min,max) {
 function newGame () {
 	var targetNumber = randomNumberFromRange(19, 120);
 	totalScore = 0;
+	$("#total-score").html(totalScore);
 	console.log(targetNumber);
 	$("#target-number").html(targetNumber);
 
