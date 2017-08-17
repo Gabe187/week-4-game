@@ -1,0 +1,149 @@
+
+<!--
+
+HTML COMPLETE!!
+X Track Wins; initial value = 0
+X Track Losses; initial value = 0
+X Space to display the number to try and match
+X Space to track the total of pts collected from the crystals
+X Render 4 crytals
+
+JS
+X Generate and display a random number from 19-120
+- Assign a different random number to each crystal between 1-12
+- Calculate the pts collected from the crystals; initial value = 0
+- Compare "running total" points to random number generated to see if equal
+- If below, collect another point from a crystal
+- If equal, increment wins
+- If greater, increment losses
+- Restart game
+
+-->
+<!DOCTYPE html>
+<html lang = "en-us">
+
+<head>
+
+	<!-- Adds the icon in the browser title -->
+	<link rel="icon" type="image/jpg" href="https://s-media-cache-ak0.pinimg.com/736x/dc/9d/4b/dc9d4bf8e5a043004f953e9ac25dbcbd--college-graduation-school-spirit.jpg">
+
+	<meta charset="UTF-8">
+
+	<!--Viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<!-- BOOTSRAP, Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<title>Crystal Collector, Wk 4</title>
+
+	<style type="text/css">
+
+    .crystal-image {
+      width: 95px;
+    }
+
+  	</style>
+
+</head>
+
+<body>
+
+ 	<!-- Bootstrap Container will hold everything. -->
+ 	<div class='container'>
+
+	    <!-- Jumbotron holds the title section. -->
+	    <div class='jumbotron'>
+	    	<div class='container'>
+	        	<h1>Crystals Collector!</h1>
+	        	<!-- <h2>INSTRUCTIONS</h2> -->
+	        	<p>You will be given a random number at the start of the game.</p>
+	        	<p>There are four crystals below.  By clicking on a crystal, you will add a specific amount of points to your total score.</p>
+	        	<p>You win the game by matching your total score to a random number, you lose the game if your total score goes above the random number.</p>
+	        	<p>The value of each crystal is hidden from you until you click on it.</p>
+	        	<p>Each time the game starts, the value of the crystals will be different!</p>
+	        	<h2>Click on a crystal to begin!</h2>
+	      	</div>
+	    </div>
+
+    <!-- Game elements held here. Panels are being used to hold various sections. -->
+    <div class='row'>
+     	<div class='col-lg-12'>
+
+        	<!-- First Panel: Holds the crystals. -->
+        	<div class='panel panel-default'>
+
+         		<div class='panel-heading'>
+            		<h3 class='panel-title'><strong>Crystals</strong></h3>
+         		</div>
+
+         		<div class='panel-body'>
+
+         			<!-- This will be the div that I will fill with the images -->
+         			<div id="crystals"></div>
+
+		            <!-- Four crystal images 
+		            <img id = "Crystal1" src="assets/images/Gem1.png" alt="Red Crystal" style="width:95px">
+				    <img id = "Crystal2" src="assets/images/Emerald.ico" alt="Green Crystal" style="width:95px">
+				    <img id = "Crystal3" src="assets/images/Zircon.png" alt="Yellow Crystal" style="width:95px">
+				    <img id = "Crystal4" src="assets/images/purple.png" alt="Purple Crystal" style="width:95px">
+				    -->
+
+         		</div>
+
+     		</div>
+
+        	<!-- Second Panel: Holds the randomly generated number to match. -->
+	        <div class='panel panel-default'>
+	         	<div class='panel-body'>
+		            <!-- This span is where the randomly generated number will go (from 19-120) -->
+		            <strong>Score to match: </strong> <span id='target-number'></span>
+	         	</div>
+
+	        </div>
+
+	        <!-- Third Panel: Holds the Running Score from touching the crystals. -->
+	        <div class='panel panel-default'>
+
+	         	<div class='panel-body'>
+		            <!-- This span will be the running tally. -->
+		            <strong>Total Score so far: </strong> <span id='total-score'></span>
+	         	</div>
+
+	        </div>
+
+	        <!-- Fourth Panel: Holds the number of Wins. -->
+	        <div class='panel panel-default'>
+
+	         	<div class='panel-body'>
+		            <!-- This span called win-counter is where we'll be dumping the number of wins. -->
+		            <strong>Wins: </strong> <span id='win-counter'>0</span>
+	         	</div>
+
+	        </div>
+
+        	<!-- Fifth Panel: Holds the number of Losses. -->
+	        <div class='panel panel-default'>
+
+	         	<div class='panel-body'>
+		            <!-- This span called loss-counter is where we'll be dumping the number of losses.  -->
+		            <strong>Losses: </strong> <span id='loss-counter'>0</span>
+	         	</div>
+
+	        </div>
+
+     	</div>
+
+    </div>
+
+  	</div>
+  <!--  Container Closed  -->
+
+<!--  jQuery Link  -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Adds a link to the JavaScript file. -->
+<script src="assets/javascript/game.js"></script>
+
+</body>
+</html>
